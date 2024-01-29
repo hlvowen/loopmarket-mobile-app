@@ -30,7 +30,7 @@ export default function TabNavigation() {
           headerTitle: () => <LogoTitle />,
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Search"
         component={Search}
         options={{
@@ -48,6 +48,7 @@ export default function TabNavigation() {
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="add-circle" size={size} color={color} />
           ),
+          headerTitle: "Vends un article",
         }}
       />
       <Tab.Screen
@@ -59,7 +60,7 @@ export default function TabNavigation() {
             <FontAwesome5 name="inbox" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="Profile"
         component={Profile}

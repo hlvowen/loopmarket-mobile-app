@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import LogoTitle from "../components/LogoTitle";
 import Post from "../components/Post";
 import Colors from "../theme/Colors";
+import ContentCard from "../components/feed/ContentCard";
 
 export default function Home() {
   const Tab = createBottomTabNavigator();
@@ -21,11 +22,18 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={{ padding: 0 }}>
+      {/* <ScrollView style={{ padding: 0 }}>
         {product.map((p, index) => (
-          <Post key={index}></Post>
+          <Post
+            title={p.title}
+            description={p.description}
+            imgSource={p.image}
+            price={p.price}
+            key={index}
+          ></Post>
         ))}
-      </ScrollView>
+      </ScrollView> */}
+      <ContentCard></ContentCard>
     </View>
   );
 }

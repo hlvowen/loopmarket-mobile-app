@@ -18,7 +18,7 @@ const images = [
   },
 ];
 
-export default function Post() {
+export default function Post(props) {
   return (
     <View style={styles.container}>
       <View style={styles.sellerContainer}>
@@ -38,7 +38,11 @@ export default function Post() {
       <View style={styles.carouselContainer}>
         <Carousel style={styles.carousel} showsControls={false}>
           {images.map((image) => (
-            <Image style={styles.image} source={image.path} key={image.id} />
+            <Image
+              style={styles.image}
+              source={{ uri: props.imgSource }}
+              key={image.id}
+            />
           ))}
         </Carousel>
       </View>
@@ -46,7 +50,7 @@ export default function Post() {
         <View style={{ alignItems: "center" }}>
           <View>
             <Text style={{ color: Colors.primaryVariant, fontSize: 20 }}>
-              10 €
+              {props.price} €
             </Text>
           </View>
           <View>
@@ -73,19 +77,11 @@ export default function Post() {
       <View style={styles.postDetailsContainer}>
         <View>
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-            Atomic Habits
+            {props.title}
           </Text>
         </View>
         <View style={{ marginTop: 5 }}>
-          <Text>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis
-            est.
-          </Text>
+          <Text>{props.description}</Text>
         </View>
       </View>
     </View>
